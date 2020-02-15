@@ -1,0 +1,37 @@
+5-#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Carro{
+       char modelo[50];
+       printf("Quant. de carros:");
+       scanf("%d",&n);
+       c=(struct carro *) malloc(n* sizeof (struct carro))
+       if(c==NULL)
+       printf("ERRO- MEMÓRIA INSUFICIENTE");
+       EXIT(1);
+}
+ for(i=0;i<n;i++){
+ printf("\nModelo %d carro:");
+ gets(c[i].modelo)
+ printf("\nCor %d carro:");
+ gets(c[i].cor);
+}
+printf("Entre com o modelo que deseja pesquisar:");
+gets(modelo);
+listagem(c,modelo,n);
+
+void listagem(struct carro *c, char *modelo,int n){
+     int i, aux;
+     aux=0;
+     for(i=0;i<n;i++)
+     if(strcmp(c[i].modelo,modelo))==0)
+     printf("\nCarro Nº %d\n Modelo %d,cor%s", i+1,c[i].modelo,c[i].cor);
+     aux=1;
+     }
+     if(aux==0)
+     printf("Modelo não encontrado :");
+     }
+
+       
+                

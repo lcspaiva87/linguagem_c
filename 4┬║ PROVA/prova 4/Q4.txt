@@ -1,0 +1,9 @@
+4-srtuct Cliente menorCredito(struct Cliente *c,int n){
+    int i;
+    struct Cliente aux;
+    aux= c[0];
+    for(i=1;i<n;i++)
+    if(c[i].credito<aux.credito)
+    aux=c[i];
+    return aux;
+}

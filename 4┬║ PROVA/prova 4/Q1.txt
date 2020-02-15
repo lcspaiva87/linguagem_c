@@ -1,0 +1,32 @@
+1-#include<stdio.h>
+struct Aluno{
+       char nome[50];
+       float nota;
+];
+int main(){
+    struct Aluno a,b,c,aux;
+    printf("\nNome:");
+    gets(&a.nome);
+    printf("\nNota:");
+    scanf("%f",&a.nota);
+    
+if(a.nota>b.nota){
+    aux=a;
+    a=b;
+    b=aux;
+}
+if(a.nota>c.nota){
+    aux=a;
+    a=c;
+    c=aux;
+}
+if(b.nota>c.nota){
+    aux=b;
+    b=c;
+    c=aux;
+}
+printf("\nNome:%s \nNota:%.1f",a.nome,a.nota);
+printf("\nNome:%s \nNota:%.1f",b.nome,b.nota);
+printf("\nNome:%s \nNota:%.1f",c.nome,c.nota);
+return 0;
+}   

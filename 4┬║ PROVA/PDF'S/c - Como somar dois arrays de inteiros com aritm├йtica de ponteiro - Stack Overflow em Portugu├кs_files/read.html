@@ -1,0 +1,24 @@
+
+<!-- saved from url=(0194)https://stackauth.com/auth/global/read?request=XBwzY8JxBwdccZJclO1CBk5aqsZ20CYGUlhPdTcGcStJVqd95kg6SAwljte0EUjnf4JTY1y44P3aBhEPMZWOL2Xesz%2FGZRSl90ypCT45fGo%3D&nonce=tolTVAAAAAA77963rkEruw%3D%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                  <script>
+                  var data = {"ReadSession":"https://stackauth.com/auth/global/read-session","Request":"XBwzY8JxBwdccZJclO1CBk5aqsZ20CYGUlhPdTcGcStJVqd95kg6SAwljte0EUjnf4JTY1y44P3aBhEPMZWOL2Xesz/GZRSl90ypCT45fGo=","Nonce":"tolTVAAAAAA77963rkEruw==","Referrer":"http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro","StorageName":"GlobalLogin"};
+
+                  var toMsg = window.parent;
+
+                  var obj = localStorage.getItem(data.StorageName);
+                  if(obj != null) {
+                  var req = new XMLHttpRequest();
+                  req.open('POST', data.ReadSession+'?request='+encodeURIComponent(data.Request)+'&nonce='+encodeURIComponent(data.Nonce)+'&seriesAndToken='+encodeURIComponent(obj), false);
+                  req.send(null);
+                  
+                    if(req.status == 200){
+                      toMsg.postMessage(req.responseText, data.Referrer);
+                    }else{
+                      toMsg.postMessage('No Session', data.Referrer);
+                    }
+                  }else{
+                    toMsg.postMessage('No Local Storage', data.Referrer);
+                  }
+                  </script>
+                  </head><body></body></html>

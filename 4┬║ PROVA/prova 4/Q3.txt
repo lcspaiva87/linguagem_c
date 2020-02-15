@@ -1,0 +1,23 @@
+3-#include<stdio.h>
+     struct Cliente{
+     charnome[50];
+     float credito;
+};
+int main(){
+    int i, n;
+    struct Cliente c[100];
+    printf("Quant. de Clientes:");
+    scanf("%d",&n);
+    
+    for(i=0;in;i++){
+    getchar();
+    printf(""Nome %d Cliente:",i+1);
+    gets(c[i].nome);
+    printf("Credito%d do cliente:");
+    scanf("%f",&c[i].credito);
+    for(i=0;i<n;i++)
+    if(c[i].credito>1000)
+    printf("Nome:%s\nCredito:%.2f",c[i].nome,c[i].credto);
+    return 0;
+}
+

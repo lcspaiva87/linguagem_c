@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>c - Como somar dois arrays de inteiros com aritmética de ponteiro? - Stack Overflow em Português</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/br/img/favicon.ico?v=dc8ddf0e4768">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/br/img/apple-touch-icon.png?v=3958fdf06794">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow em Português" href="http://pt.stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackOverflowPT">
+    <meta name="twitter:domain" content="pt.stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/br/img/apple-touch-icon.png?v=3958fdf06794">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Como somar dois arrays de inteiros com aritmética de ponteiro?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Estou fazendo um exercício em que passo por parâmetro dois arrays de inteiros já definidos pelo usuário. Preciso agora, em um terceiro array, armazenar a soma dos dois arrays recebidos, nas mesmas ">
+    <meta property="og:url" content="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%c3%a9tica-de-ponteiro">
+    <link rel="canonical" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%c3%a9tica-de-ponteiro">
+
+    
+    
+    <script type="text/javascript" async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/ados"></script><script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/quant.js"></script><script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/beacon.js"></script><script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/analytics.js"></script><script type="text/javascript" async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/ados.js"></script><script src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/jquery.min.js"></script>
+    <script src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/stub.pt-BR.js"></script>
+    <link rel="stylesheet" type="text/css" href="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed para a pergunta &#39;Como somar dois arrays de inteiros com aritmética de ponteiro?&#39;" href="http://pt.stackoverflow.com/feeds/question/5545">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:5545});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('526', '5545');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('526');
+                StackExchange.realtime.subscribeToTopBarNotifications('526');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"pt-BR","stackAuthUrl":"https://stackauth.com","serverTime":1414760885,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow em Português","description":"Perguntas e respostas para programadores profissionais e entusiastas","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"de5f6dbcbf485075db247c10a5da253e","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.pt-BR.js":"c1509457f821","js/moderator.pt-BR.js":"6bf1f1e0e43f","js/full-anon.pt-BR.js":"9344073b4854","js/full.pt-BR.js":"6ca2f3e1740b","js/wmd.pt-BR.js":"d39bf47695cc","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.pt-BR.js":"","js/mobile.pt-BR.js":"4578b5a50214","js/help.pt-BR.js":"df591d9b42dd","js/tageditor.pt-BR.js":"26445c360213","js/tageditornew.pt-BR.js":"5884fa15f63a","js/inline-tag-editing.pt-BR.js":"c92846120604","js/revisions.pt-BR.js":"8ff7530da0ac","js/review.pt-BR.js":"19ba1e0aa21a","js/tagsuggestions.pt-BR.js":"21475cd6ba66","js/post-validation.pt-BR.js":"5584dc11b628","js/explore-qlist.pt-BR.js":"ce6dbe2ac3f4","js/events.pt-BR.js":"2bccb04b7fdd","js/keyboard-shortcuts.pt-BR.js":"b337d011822f","js/external-editor.pt-BR.js":"49698af798ea","js/external-editor.pt-BR.js":"49698af798ea","js/snippet-javascript.pt-BR.js":"d8edc0f017aa","js/snippet-javascript-codemirror.pt-BR.js":"3c9a5309540a"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/full-anon.pt-BR.js"></script><script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/snippet-javascript.pt-BR.js"></script><script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/post-validation.pt-BR.js"></script><script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/prettify-full.pt-BR.js"></script><script async="" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/external-editor.pt-BR.js"></script></head>
+<body class="question-page new-topbar" lang="">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://pt.stackoverflow.com/">comunidade atual</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">bate-papo</a>
+                    <a href="http://blog.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://pt.stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="526" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-br" title="Stack Overflow em Português"></div>
+        Stack Overflow em Português
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.pt.stackoverflow.com/" class="site-link js-gps-track" data-id="527" data-gps-track="
+            site.switch({ target_site:527, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-brmeta" title="Stack Overflow em Português Meta"></div>
+        Stack Overflow em Português Meta
+    </a>
+
+                </li>
+                    </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+suas comunidades        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://pt.stackoverflow.com/users/signup?returnurl=http%3a%2f%2fpt.stackoverflow.com%2fquestions%2f5545%2fcomo-somar-dois-arrays-de-inteiros-com-aritm%25c3%25a9tica-de-ponteiro" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Registrar-se</a>
+                    or
+                    <a href="https://pt.stackoverflow.com/users/login?returnurl=http%3a%2f%2fpt.stackoverflow.com%2fquestions%2f5545%2fcomo-somar-dois-arrays-de-inteiros-com-aritm%25c3%25a9tica-de-ponteiro" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log-in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">mais comunidades do stack exchange</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="Uma lista de todos os 130 sites do Stack Exchange">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://pt.stackoverflow.com/users/signup?returnurl=http%3a%2f%2fpt.stackoverflow.com%2fquestions%2f5545%2fcomo-somar-dois-arrays-de-inteiros-com-aritm%25c3%25a9tica-de-ponteiro" class="login-link">registrar</a>
+                            <a href="https://pt.stackoverflow.com/users/login?returnurl=http%3a%2f%2fpt.stackoverflow.com%2fquestions%2f5545%2fcomo-somar-dois-arrays-de-inteiros-com-aritm%25c3%25a9tica-de-ponteiro" class="login-link">log-in</a>
+                            <a href="http://pt.stackoverflow.com/tour">tour</a>
+
+                            <a href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#" class="icon-help js-help-button" title="Central de ajuda e outros recursos">
+        ajuda
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://pt.stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Comece aqui para obter uma visão geral rápida do site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://pt.stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Central de ajuda
+                        <span class="item-summary">
+                            Respostas detalhadas a qualquer pergunta que você tiver
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.pt.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discutir o funcionamento e as políticas deste site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://pt.stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="pesquisa" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://pt.stackoverflow.com/">
+                    Stack Overflow em Português
+                        <span class="beta-title">beta</span>
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://pt.stackoverflow.com/questions">Perguntas</a></li>
+                        <li><a id="nav-tags" href="http://pt.stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://pt.stackoverflow.com/users">Usuários</a></li>
+                        <li><a id="nav-badges" href="http://pt.stackoverflow.com/help/badges">Medalhas</a></li>
+                        <li><a id="nav-unanswered" href="http://pt.stackoverflow.com/unanswered">Sem resposta</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://pt.stackoverflow.com/questions/ask">Faça uma pergunta</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/br/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://pt.stackoverflow.com/tour" id="tell-me-more" class="button">Faça o tour de 2 minutos</a>
+            <span id="close"><a title="clique para dispensar">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow em Português é um site de perguntas e respostas para programadores profissionais e entusiastas. É 100% gratuito e não requer registro.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%c3%a9tica-de-ponteiro" class="question-hyperlink">Como somar dois arrays de inteiros com aritmética de ponteiro?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="5545" id="question">
+
+        <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="5545">
+    <a class="vote-up-off" title="Esta pergunta mostra esforço de pesquisa; é útil e clara">votar a favor</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="Esta pergunta não mostra nenhum esforço de pesquisa; ela não é clara ou não é útil">votar contra</a>
+    
+    <a class="star-off" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#" title="Esta é uma pergunta favorita (clique novamente para desfazer)">favorita</a>
+    <div class="favoritecount"><b>1</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>Estou fazendo um exercício em que passo por parâmetro dois arrays de inteiros já definidos pelo usuário. Preciso agora, em um terceiro array, armazenar a soma dos dois arrays recebidos, nas mesmas posições, utilizando aritmética de ponteiro. </p>
+
+<p>Ex:</p>
+
+<pre class="lang-c prettyprint prettyprinted"><code><span class="pln">vet </span><span class="lit">1</span><span class="pln"> </span><span class="pun">[</span><span class="lit">1</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="pun">]</span><span class="pln">
+vet </span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">1</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="pun">]</span><span class="pln"> </span></code></pre>
+
+<p>Aqui no terceiro vetor tenho que receber a soma utilizando aritmética de ponteiro.</p>
+
+<pre class="lang-c prettyprint prettyprinted"><code><span class="pln">vet </span><span class="lit">3</span><span class="pln"> </span><span class="pun">[</span><span class="lit">2</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">6</span><span class="pun">]</span></code></pre>
+
+<p>Minha tentativa:</p>
+
+<pre class="lang-c prettyprint prettyprinted"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;stdio.h&gt;</span><span class="pln">
+</span><span class="com">#define</span><span class="pln"> MAX </span><span class="lit">100</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> soma_ponteiro</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">vet1</span><span class="pun">,</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">vet2</span><span class="pun">,</span><span class="typ">int</span><span class="pln"> num</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> main</span><span class="pun">(){</span><span class="pln">
+
+    </span><span class="typ">int</span><span class="pln"> vet1</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">],</span><span class="pln">vet2</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">];</span><span class="pln">
+    </span><span class="typ">int</span><span class="pln"> num</span><span class="pun">,</span><span class="pln">i</span><span class="pun">;</span><span class="pln">
+
+    printf</span><span class="pun">(</span><span class="str">"Digite qtd de numeros:\n"</span><span class="pun">);</span><span class="pln">
+    scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">num</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">for</span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln">i</span><span class="pun">&lt;</span><span class="pln">num</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++){</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\nDigite numero %d vetor 1\n"</span><span class="pun">,</span><span class="pln">i</span><span class="pun">+</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+        scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">vet1</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+        printf</span><span class="pun">(</span><span class="str">"\nDigite numero %d vetor 2\n"</span><span class="pun">,</span><span class="pln">i</span><span class="pun">+</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+        scanf</span><span class="pun">(</span><span class="str">"%d"</span><span class="pun">,&amp;</span><span class="pln">vet2</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    soma_ponteiro</span><span class="pun">(</span><span class="pln">vet1</span><span class="pun">,</span><span class="pln">vet2</span><span class="pun">,</span><span class="pln">num</span><span class="pun">);</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"\n%d"</span><span class="pun">,</span><span class="pln">soma_ponteiro</span><span class="pun">(</span><span class="pln">vet1</span><span class="pun">,</span><span class="pln">vet2</span><span class="pun">,</span><span class="pln">num</span><span class="pun">));</span><span class="pln">
+
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="typ">int</span><span class="pln"> soma_ponteiro</span><span class="pun">(</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">vet1</span><span class="pun">,</span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">vet2</span><span class="pun">,</span><span class="typ">int</span><span class="pln"> num</span><span class="pun">){</span><span class="pln">
+    </span><span class="typ">int</span><span class="pln"> vet3</span><span class="pun">[</span><span class="pln">MAX</span><span class="pun">];</span><span class="pln">
+    </span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">last_pos</span><span class="pun">=</span><span class="pln">vet1</span><span class="pun">+</span><span class="pln">num</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptr </span><span class="pun">=</span><span class="pln"> vet1</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptr2</span><span class="pun">=</span><span class="pln"> vet2</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">int</span><span class="pln"> </span><span class="pun">*</span><span class="pln">ptr3</span><span class="pun">=</span><span class="pln"> vet3</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">while</span><span class="pun">(</span><span class="pln">ptr</span><span class="pun">&lt;</span><span class="pln">last_pos</span><span class="pun">){</span><span class="pln">
+        </span><span class="pun">*</span><span class="pln">ptr3 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">*</span><span class="pln">vet1</span><span class="pun">+*</span><span class="pln">vet2</span><span class="pun">;</span><span class="pln">
+    ptr</span><span class="pun">++;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> ptr3</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://pt.stackoverflow.com/questions/tagged/c" class="post-tag js-gps-track" title="mostrar perguntas com a tag &#39;c&#39;" rel="tag">c</a> <a href="http://pt.stackoverflow.com/questions/tagged/ponteiro" class="post-tag js-gps-track" title="mostrar perguntas com a tag &#39;ponteiro&#39;" rel="tag">ponteiro</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://pt.stackoverflow.com/q/5545" title="permalink curto para esta pergunta" class="short-link" id="link-post-5545">compartilhar</a><span class="lsep">|</span><a href="http://pt.stackoverflow.com/posts/5545/edit" class="suggest-edit-post" title="">melhorar esta pergunta</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://pt.stackoverflow.com/posts/5545/revisions" title="mostrar todas as edições desta publicação">editada <span title="2014-03-08 14:43:40Z" class="relativetime">8/03 às 14:43</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://pt.stackoverflow.com/users/74/bfavaretto"><div class="gravatar-wrapper-32"><img src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/99e9d896a23f5ea76071fa2d54df94ee" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://pt.stackoverflow.com/users/74/bfavaretto">bfavaretto</a><span class="mod-flair" title="moderator">♦</span><br>
+        <span class="reputation-score" title="pontuação de reputação 18271" dir="ltr">18.3k</span><span title="4 medalhas de ouro"><span class="badge1"></span><span class="badgecount">4</span></span><span title="27 medalhas de prata"><span class="badge2"></span><span class="badgecount">27</span></span><span title="78 medalhas de bronze"><span class="badge3"></span><span class="badgecount">78</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        perguntada <span title="2014-02-12 20:01:16Z" class="relativetime">12/02 às 20:01</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://pt.stackoverflow.com/users/2713/fabaoanalista"><div class="gravatar-wrapper-32"><img src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/picture" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://pt.stackoverflow.com/users/2713/fabaoanalista">fabaoanalista</a><br>
+        <span class="reputation-score" title="pontuação de reputação " dir="ltr">42</span><span title="6 medalhas de bronze"><span class="badge3"></span><span class="badgecount">6</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-5545" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8927" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="número de votos para &#39;comentários úteis&#39; recebidos" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Seja mais específico em sua pergunta. O que você tentou fazer? O que não deu certo?</span>
+                –&nbsp;
+                    <a href="http://pt.stackoverflow.com/users/357/piovezan" title="reputação 1888" class="comment-user">Piovezan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#comment8927_5545"><span title="2014-02-12 20:04:37Z" class="relativetime-clean">12/02 às 20:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8930" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="número de votos para &#39;comentários úteis&#39; recebidos" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Dei um downvote pois sua pergunta não demonstra esforço nenhum. Mostre seu código, diga o que tentou, o que não soube fazer, etc.</span>
+                –&nbsp;
+                    <a href="http://pt.stackoverflow.com/users/180/korbes" title="reputação 223" class="comment-user">korbes</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#comment8930_5545"><span title="2014-02-12 20:07:45Z" class="relativetime-clean">12/02 às 20:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8933" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ok, já passei os vetores 1 e 2 preenchidos pelo usuario, ele escolhe qual o tamanho dos vetores 1 e 2 e os preenche. Minha dúvida principal é como devo receber a soma desses vetores usando aritmética de ponteiros, não posso percorre-los com laço e soma-los, tem q ser com aritmetica de ponteiro. Segue minha função  int soma_ponteiro(int *vet1,int *vet2,int num){     int vet3[MAX];     int *last_pos=vet1+num;     int *ptr = vet1;     int *ptr2= vet2;     int *ptr3= vet3;      while(ptr&lt;last_pos){         *ptr3 = *vet1+*vet2;     ptr++;     }     return ptr3; }</span>
+                –&nbsp;
+                    <a href="http://pt.stackoverflow.com/users/2713/fabaoanalista" title="reputação 42" class="comment-user owner">fabaoanalista</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#comment8933_5545"><span title="2014-02-12 20:09:31Z" class="relativetime-clean">12/02 às 20:09</span></a></span>
+                    <span class="edited-yes" title="Este comentário foi editado 1 vez"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-5545" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite responder perguntas em comentários.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="Expandir para mostrar todos os comentários sobre esta publicação ou adicionar seu próprio comentário" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Respostas
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%c3%a9tica-de-ponteiro?answertab=active#tab-top" title="Respostas com a atividade mais recente primeiro">ativa</a>
+        <a href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%c3%a9tica-de-ponteiro?answertab=oldest#tab-top" title="Respostas na ordem em que foram fornecidas">mais antigas</a>
+        <a class="youarehere" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%c3%a9tica-de-ponteiro?answertab=votes#tab-top" title="Respostas com a pontuação mais alta primeiro">votos</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="5547"></a>
+<div id="answer-5547" class="answer accepted-answer" data-answerid="5547" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="5547">
+    <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="carregando quando esta resposta foi aceita...">aceitos</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Veja se é isto o que deseja:</p>
+
+<pre class="lang-c prettyprint prettyprinted"><code><span class="typ">int</span><span class="pln"> vet1</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]={</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">},</span><span class="pln"> vet2</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]={</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">},</span><span class="pln"> vet3</span><span class="pun">[</span><span class="lit">3</span><span class="pun">],</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p1</span><span class="pun">,</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p2</span><span class="pun">,</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p3</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+p1 </span><span class="pun">=</span><span class="pln"> vet1</span><span class="pun">;</span><span class="pln">
+p2 </span><span class="pun">=</span><span class="pln"> vet2</span><span class="pun">;</span><span class="pln">
+p3 </span><span class="pun">=</span><span class="pln"> vet3</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="lit">3</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">++)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="pun">*</span><span class="pln">p3 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p1 </span><span class="pun">+</span><span class="pln"> </span><span class="pun">*</span><span class="pln">p2</span><span class="pun">;</span><span class="pln">
+    p1</span><span class="pun">++;</span><span class="pln">
+    p2</span><span class="pun">++;</span><span class="pln">
+    p3</span><span class="pun">++;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i</span><span class="pun">=</span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i</span><span class="pun">&lt;</span><span class="lit">3</span><span class="pun">;</span><span class="pln">i</span><span class="pun">++)</span><span class="pln">
+    printf</span><span class="pun">(</span><span class="str">"\tvet3[%d] = %d"</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">,</span><span class="pln"> vet3</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]);</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://pt.stackoverflow.com/a/5547" title="permalink curto para esta resposta" class="short-link" id="link-post-5547">compartilhar</a><span class="lsep">|</span><a href="http://pt.stackoverflow.com/posts/5547/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        respondida <span title="2014-02-12 20:14:13Z" class="relativetime">12/02 às 20:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <span class="anonymous-gravatar"></span>
+    </div>
+    <div class="user-details">
+        user4552<br>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-5547" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8934" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Cara show de bola, precisa abstrair mesmo, com o laço assim ficou perfeito.</span>
+                –&nbsp;
+                    <a href="http://pt.stackoverflow.com/users/2713/fabaoanalista" title="reputação 42" class="comment-user owner">fabaoanalista</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#comment8934_5547"><span title="2014-02-12 20:27:03Z" class="relativetime-clean">12/02 às 20:27</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-5547" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="Expandir para mostrar todos os comentários sobre esta publicação ou adicionar seu próprio comentário" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8564"></a>
+<div id="answer-8564" class="answer" data-answerid="8564" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8564">
+    <a class="vote-up-off" title="Esta resposta é útil">votar a favor</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="Esta resposta não é útil">votar contra</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Para conseguir fazer operações entre dois vectores numa função tem que cumprir estas "regras":</p>
+
+<ol>
+<li>Passar os vectores por parâmetro</li>
+<li>Passar a dimensão dos vectores por parâmetro</li>
+</ol>
+
+<p>Depois disso é só percorrer o vector num ciclo, pode usar um contador <code>i</code>, e usar o array sem ponteiros, desta forma: <code>vector[i] = 1 + 2;</code> ou então <code>*(vector + i) = 1 + 2</code></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://pt.stackoverflow.com/a/8564" title="permalink curto para esta resposta" class="short-link" id="link-post-8564">compartilhar</a><span class="lsep">|</span><a href="http://pt.stackoverflow.com/posts/8564/edit" class="suggest-edit-post" title="">melhorar esta resposta</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://pt.stackoverflow.com/posts/8564/revisions" title="mostrar todas as edições desta publicação">editada <span title="2014-03-08 14:44:21Z" class="relativetime">8/03 às 14:44</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://pt.stackoverflow.com/users/74/bfavaretto"><div class="gravatar-wrapper-32"><img src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/99e9d896a23f5ea76071fa2d54df94ee" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://pt.stackoverflow.com/users/74/bfavaretto">bfavaretto</a><span class="mod-flair" title="moderator">♦</span><br>
+        <span class="reputation-score" title="pontuação de reputação 18271" dir="ltr">18.3k</span><span title="4 medalhas de ouro"><span class="badge1"></span><span class="badgecount">4</span></span><span title="27 medalhas de prata"><span class="badge2"></span><span class="badgecount">27</span></span><span title="78 medalhas de bronze"><span class="badge3"></span><span class="badgecount">78</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        respondida <span title="2014-03-08 14:04:03Z" class="relativetime">8/03 às 14:04</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://pt.stackoverflow.com/users/3347/andr%c3%a9-lizardo"><div class="gravatar-wrapper-32"><img src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/picture(1)" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://pt.stackoverflow.com/users/3347/andr%c3%a9-lizardo">André Lizardo</a><br>
+        <span class="reputation-score" title="pontuação de reputação " dir="ltr">327</span><span title="11 medalhas de bronze"><span class="badge3"></span><span class="badgecount">11</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8564" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8564" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comentários para pedir mais informações ou sugerir melhorias. Evite comentários como “+1” ou “obrigado”.">comentar</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="Expandir para mostrar todos os comentários sobre esta publicação ou adicionar seu próprio comentário" href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://pt.stackoverflow.com/questions/5545/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="5545">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com.br/">
+							<h2 class="space">Sua resposta</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">rascunho salvo</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">rascunho descartado</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="de5f6dbcbf485075db247c10a5da253e">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Registre-se ou faça <a id="login-link" href="http://pt.stackoverflow.com/users/login?returnurl=%2fquestions%2f5545%2fcomo-somar-dois-arrays-de-inteiros-com-aritm%25c3%25a9tica-de-ponteiro%23new-answer">log-in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Registre-se usando o Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Registre-se usando o Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Registre-se usando Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Publicar como convidado</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Nome</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">E-mail</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but não exibido</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f5545%2fcomo-somar-dois-arrays-de-inteiros-com-aritm%25c3%25a9tica-de-ponteiro%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Publicar como convidado&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Nome&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;E-mail&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but n&amp;#227;o exibido&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Publique sua resposta" tabindex="110">
+									<a href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro#" class="discard-answer dno">descartar</a>
+
+<p class="privacy-policy-agreement">
+Ao publicar sua resposta, você concorda com a <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">política de privacidade</a> e com os <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">termos do serviço</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Esta não é a resposta que você está procurando?							Pesquise outras perguntas com a tag <a href="http://pt.stackoverflow.com/questions/tagged/c" class="post-tag" title="mostrar perguntas com a tag &#39;c&#39;" rel="tag">c</a> <a href="http://pt.stackoverflow.com/questions/tagged/ponteiro" class="post-tag" title="mostrar perguntas com a tag &#39;ponteiro&#39;" rel="tag">ponteiro</a>  ou <a href="http://pt.stackoverflow.com/questions/ask">faça sua própria pergunta</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">perguntada</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2014-02-12 20:01:16Z"><b>8 meses atrás</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">acessada</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>233 vezes</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">ativa</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://pt.stackoverflow.com/questions/5545/como-somar-dois-arrays-de-inteiros-com-aritm%C3%A9tica-de-ponteiro?lastactivity" class="lastactivity-link" title="2014-03-08 14:44:21Z">7 meses atrás</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<style type="text/css">
+    .ads { margin-left: 60px; }
+    .ad-container { width: 220px; height: 250px; margin-right: 20px; margin-bottom: 20px; }
+    .ad-container .ad { height: 250px; }
+    .ad-container .footer-container { overflow: hidden; height: 30px; position: relative; top: -30px; }
+    .ad-container .footer-container .footer { font-family: Arial,Helvetic,Sans-Serif; font-size: 12px; text-align: center; padding-top: 9px; background-color: #000; color: #EFF; opacity: 0.9; filter: alpha(opacity=90); top: 30px; height: 30px; position: relative; }
+    .ad-container a:hover { text-decoration: underline; }
+    #adzerk2 { height: 250px; }
+</style>
+<script>
+    StackExchange.ready(function () {
+        $(".ad-container").hover(
+            function () {
+                $(".ad-container .footer-container .footer").stop(true, true).animate({ top: "0px" }, "fast");
+            },
+            function () {
+                $(".ad-container .footer-container .footer").animate({ top: "30px" }, "fast");
+            });
+    });
+</script>
+    <script>
+        var ados = ados || {};ados.run = ados.run || [];
+        ados.run.push(function () { ados_add_placement(22, 12057, "adcm2", 17).setZone(76); });
+    </script>
+    <div class="everyonelovesstackoverflow" id="adcm2"><div id="SE20-ad-container" style="height: 250px; width: 220px;">
+<style>
+#launched-ad { width: 220px; height: 250px; overflow: hidden; background: url(//cdn.sstatic.net/stackexchange/Img/launched-ads/security.png) no-repeat bottom center; }
+#launched-ad-link { display: block; width: 220px; height: 250px; line-height: 1.2; color: #d6f6f7 !important; font-family: Georgia,"Times New Roman",serif; font-size: 20px; line-height: 26px; text-decoration: none; cursor: pointer; }
+#launched-ad-inner { width: 170px; margin: 25px 25px 0 25px;}
+</style>
+<a id="launched-ad-link" href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjoxMTYxLCJjaCI6MTE5OCwiY3IiOjMxOTQsImRpIjoiOWNlYjc4YWI5NTNhNDJmOWFkYzZkMjlmNTdlZGI2MzQiLCJkbSI6MSwiZmMiOjQ2NDksImZsIjozMzM1LCJpcCI6IjE4Ny43OS4yMDkuMTI0Iiwia3ciOiJjc3MsY3NzMyx4LWhvc3QtcHQuc3RhY2tvdmVyZmxvdy5jb20iLCJudyI6MjIsInBjIjowLCJwciI6MTc1NiwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6MTIwNTcsInVrIjoidWUxLTczZjhkYmY2MGUxODRhYTM4ZGUyNGU4M2ZlYjkwMWY4Iiwiem4iOjc2LCJ0cyI6MTQxNDc2MDg4Njk4OCwidXIiOm51bGx9&s=_ggvKRFEJe7WTKUby91tEkRQZR4&url=http%3A%2F%2Fsecurity.stackexchange.com%2Fquestions%2F71905%2Fhow-to-report-vulnerabilities-without-being-regarded-as-a-hacker">
+    <div id="launched-ad">
+        <div id="launched-ad-inner">How to report vulnerabilities without being regarded as a hacker?</div>
+    </div>
+</a>
+</div><script type="text/javascript">window._launchedAdUrl= "http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjoxMTYxLCJjaCI6MTE5OCwiY3IiOjMxOTQsImRpIjoiOWNlYjc4YWI5NTNhNDJmOWFkYzZkMjlmNTdlZGI2MzQiLCJkbSI6MSwiZmMiOjQ2NDksImZsIjozMzM1LCJpcCI6IjE4Ny43OS4yMDkuMTI0Iiwia3ciOiJjc3MsY3NzMyx4LWhvc3QtcHQuc3RhY2tvdmVyZmxvdy5jb20iLCJudyI6MjIsInBjIjowLCJwciI6MTc1NiwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6MTIwNTcsInVrIjoidWUxLTczZjhkYmY2MGUxODRhYTM4ZGUyNGU4M2ZlYjkwMWY4Iiwiem4iOjc2LCJ0cyI6MTQxNDc2MDg4Njk4OCwidXIiOm51bGx9&s=_ggvKRFEJe7WTKUby91tEkRQZR4";</script><script type="text/javascript" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/js"></script><img height="0px" width="0px" border="0" style="position:absolute;" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/i.gif"></div> 
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('css,css3,x-host-pt.stackoverflow.com');; ados_load(); });         
+</script>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Vinculado</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://pt.stackoverflow.com/q/5557?lq=1" title="Contagem de votos (a favor - contra)">
+		<div class="answer-votes  default">-4</div>
+	</a>
+	<a href="http://pt.stackoverflow.com/questions/5557/como-inicializar-uma-matriz-usando-ponteiros?lq=1" class="question-hyperlink">Como inicializar uma matriz usando ponteiros?</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Relacionado</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/4122?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/4122/qual-a-diferen%c3%a7a-entre-essas-formas-de-indexar-um-ponteiro-para-array-de-structs?rq=1" class="question-hyperlink">Qual a diferença entre essas formas de indexar um ponteiro para array de structs em c?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/4858?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/4858/fun%c3%a7%c3%a3o-retorna-ponteiro-para-lixo-e-free-trava-o-terminal?rq=1" class="question-hyperlink">Função retorna ponteiro para lixo, e free trava o terminal</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/5557?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes default">-4
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/5557/como-inicializar-uma-matriz-usando-ponteiros?rq=1" class="question-hyperlink">Como inicializar uma matriz usando ponteiros?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/8592?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/8592/ponteiros-com-m%c3%a9todos-onde-estou-errando?rq=1" class="question-hyperlink">Ponteiros com métodos, onde estou errando?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/20584?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/20584/m%c3%a9dia-de-vetor-dos-%c3%adndices-de-n%c3%bamero-primo?rq=1" class="question-hyperlink">Média de vetor, dos índices de número primo</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/23956?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/23956/linguagem-c-n%c3%bameros-primos-em-vetores?rq=1" class="question-hyperlink">Linguagem C - Números primos em vetores</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/27009?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/27009/d%c3%bavida-em-struct-ponteiro-em-c?rq=1" class="question-hyperlink">Dúvida em Struct + Ponteiro em C</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/28014?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/28014/maior-menor-em-vetores?rq=1" class="question-hyperlink">maior/menor em vetores</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/28239?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/28239/tem-como-melhorar?rq=1" class="question-hyperlink">Tem como melhorar</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://pt.stackoverflow.com/q/33654?rq=1" title="Contagem de votos (a favor - contra)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://pt.stackoverflow.com/questions/33654/como-uma-vari%c3%a1vel-ponteiro-para-inteiro-%c3%a9-armazenada?rq=1" class="question-hyperlink">Como uma variável ponteiro para inteiro é armazenada?</a>
+</div>
+
+                    </div>
+				</div>
+            
+
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://pt.stackoverflow.com/feeds/question/5545" title="feed desta pergunta e suas respostas">
+            <span class="feed-icon"></span>feed da pergunta
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/5545/ivc/1ce9');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/5545/ivc/1ce9" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-c</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://pt.stackoverflow.com/tour">tour</a>
+                    <a href="http://pt.stackoverflow.com/help">ajuda</a>
+                        <a href="http://pt.stackoverflow.com/help/badges">medalhas</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">bate-papo</a>
+                    <a href="http://data.stackexchange.com/">dados</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">política de privacidade</a>
+                    <a href="http://stackexchange.com/work-here">trabalhe aqui</a>
+                    <a href="http://stackexchange.com/mediakit">informações de publicidade</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">móvel</a>
+                    <b><a href="http://pt.stackoverflow.com/contact">entre em contato conosco</a></b>
+                        <b><a href="http://meta.br.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                design/logotipo do site © 2014 stack exchange inc; contribuições de usuários com licença de <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>                   com <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">atribuição necessária</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.10.30.1978
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="./c - Como somar dois arrays de inteiros com aritmética de ponteiro  - Stack Overflow em Português_files/read.html"></iframe></div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow em Portugu&amp;#234;s funciona melhor com o JavaScript ativado&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-42');        
+        
+        ga('set', 'dimension2', '|c|ponteiro|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>

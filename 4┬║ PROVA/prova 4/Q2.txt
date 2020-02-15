@@ -1,0 +1,31 @@
+2-#include<stdio.h>
+#include<stdlib.h> 
+float media(float*p,int n);
+int main(){
+    int i,n;
+    float *t,m;
+    printf("Quantidade de temperatura:");
+    scanf("%d",&n);
+    
+    t= (float*) malloc(n* sizeof(float));
+    if(t==NULL){
+    printf("ERRO-MEMÒRIA INSUFICIENTE");
+    exit(1);
+}
+    for(i=0,i<n,i++){
+    printf("%dTemperatura",i+1);
+    scanf("%f",&t[i]);
+}
+m= media(t,n);
+printf("\nMedia:%.1f",m);
+free(t);
+return 0;
+}
+float media (float *t,int n){
+     int i;
+     float m=0;
+     for(i=0;i<n;i++){
+     m= m+t[i];
+     m= m/n;
+     return m;
+}

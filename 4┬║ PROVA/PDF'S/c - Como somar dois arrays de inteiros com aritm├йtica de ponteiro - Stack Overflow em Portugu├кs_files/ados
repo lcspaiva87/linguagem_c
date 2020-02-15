@@ -1,0 +1,14 @@
+var adcm2_html_89997 = '\x3cdiv\x20id\x3d\x22SE20\x2dad\x2dcontainer\x22\x20style\x3d\x22height\x3a\x20250px\x3b\x20width\x3a\x20220px\x3b\x22\x3e\x3c\x2fdiv\x3e';
+var adcm2_html_command_44570 = function() { azHtmlLoad('adcm2', adcm2_html_89997); };
+var adcm2_js_15756 = 'window\x2e_launchedAdUrl\x3d\x20\x22http\x3a\x2f\x2fengine\x2eadzerk\x2enet\x2fr\x3fe\x3deyJhdiI6NDE0LCJhdCI6MTcsImNtIjoxMTYxLCJjaCI6MTE5OCwiY3IiOjMxOTQsImRpIjoiOWNlYjc4YWI5NTNhNDJmOWFkYzZkMjlmNTdlZGI2MzQiLCJkbSI6MSwiZmMiOjQ2NDksImZsIjozMzM1LCJpcCI6IjE4Ny43OS4yMDkuMTI0Iiwia3ciOiJjc3MsY3NzMyx4LWhvc3QtcHQuc3RhY2tvdmVyZmxvdy5jb20iLCJudyI6MjIsInBjIjowLCJwciI6MTc1NiwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6MTIwNTcsInVrIjoidWUxLTczZjhkYmY2MGUxODRhYTM4ZGUyNGU4M2ZlYjkwMWY4Iiwiem4iOjc2LCJ0cyI6MTQxNDc2MDg4Njk4OCwidXIiOm51bGx9\x26s\x3d_ggvKRFEJe7WTKUby91tEkRQZR4\x22\x3b';
+var adcm2_js_command_83925 = function() { azScriptInlineLoad('adcm2', adcm2_js_15756); };
+var adcm2_js_48300 = 'http\x3a\x2f\x2fstackexchange\x2ecom\x2fads\x2flaunched\x2dquestion\x2fjs\x3fid\x3dSE20\x2dad\x2dcontainer';
+var adcm2_js_command_14668 = function() { azScriptSRCLoad('adcm2', adcm2_js_48300); };
+var adcm2_pixel_60589 = 'http\x3a\x2f\x2fengine\x2eadzerk\x2enet\x2fi\x2egif\x3fe\x3deyJhdiI6NDE0LCJhdCI6MTcsImNtIjoxMTYxLCJjaCI6MTE5OCwiY3IiOjMxOTQsImRpIjoiOWNlYjc4YWI5NTNhNDJmOWFkYzZkMjlmNTdlZGI2MzQiLCJkbSI6MSwiZmMiOjQ2NDksImZsIjozMzM1LCJpcCI6IjE4Ny43OS4yMDkuMTI0Iiwia3ciOiJjc3MsY3NzMyx4LWhvc3QtcHQuc3RhY2tvdmVyZmxvdy5jb20iLCJudyI6MjIsInBjIjowLCJwciI6MTc1NiwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS5ici8iLCJzdCI6MTIwNTcsInVrIjoidWUxLTczZjhkYmY2MGUxODRhYTM4ZGUyNGU4M2ZlYjkwMWY4Iiwiem4iOjc2LCJ0cyI6MTQxNDc2MDg4Njk4OX0\x26s\x3dQVmvJmuzbHea4epyIgVL5mH_hJs';
+var adcm2_pixel_command_65661 = function() { if(ados_writePixel){ ados_writePixel('adcm2', adcm2_pixel_60589); } else { ados_passbackWritePixel('adcm2', adcm2_pixel_60589, 3335) }; };
+setTimeout(function() {
+  azLoad('adcm2', adcm2_html_command_44570);
+  azLoad('adcm2', adcm2_js_command_83925);
+  azLoad('adcm2', adcm2_js_command_14668);
+  azLoad('adcm2', adcm2_pixel_command_65661);
+}, 100);
